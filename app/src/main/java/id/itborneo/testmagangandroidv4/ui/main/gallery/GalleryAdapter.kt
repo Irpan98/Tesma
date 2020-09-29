@@ -26,7 +26,10 @@ class GalleryAdapter(
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(dataItem: GalleryDataItem) {
             Log.d(TAG, " ViewHolder " + dataItem.thumbnail)
-
+//
+//            Glide.with(itemView.context)
+//                .load(dataItem.thumbnail)
+//                .into(itemView.ivGallery)
 
             itemView.setOnClickListener {
                 listener(dataItem)
@@ -34,9 +37,10 @@ class GalleryAdapter(
             Picasso.get()
                 .load(dataItem.thumbnail)
                 .resize(250, 250)
-                .placeholder(R.drawable.loading_image)
                 .centerCrop()
                 .into(itemView.ivGallery)
+
+
 
         }
 
