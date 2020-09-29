@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/placesFragment">
+
+    <fragment
+        android:id="@+id/placesFragment"
+        android:name="id.itborneo.testmagangandroidv4.ui.places.PlacesFragment"
+        android:label="fragment_places"
+        tools:layout="@layout/fragment_places" >
+        <action
+            android:id="@+id/action_placesFragment_to_detailPlaceFragment"
+            app:destination="@id/detailPlaceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="id.itborneo.testmagangandroidv4.ui.gallery.GalleryFragment"
+        android:label="fragment_gallery"
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_galleryFragment_to_galleryDetailFragment"
+            app:destination="@id/galleryDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="id.itborneo.testmagangandroidv4.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/detailPlaceFragment"
+        android:name="id.itborneo.testmagangandroidv4.ui.placesDetail.DetailPlaceFragment"
+        android:label="fragment_detail_place"
+        tools:layout="@layout/fragment_detail_place" />
+    <fragment
+        android:id="@+id/galleryDetailFragment"
+        android:name="id.itborneo.testmagangandroidv4.ui.galleryDetail.GalleryDetailFragment"
+        android:label="fragment_gallery_detail"
+        tools:layout="@layout/fragment_gallery_detail" />
+</navigation>
