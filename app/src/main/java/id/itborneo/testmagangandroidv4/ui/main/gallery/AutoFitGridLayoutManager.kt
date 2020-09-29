@@ -1,4 +1,4 @@
-package id.itborneo.testmagangandroidv4.ui.gallery
+package id.itborneo.testmagangandroidv4.ui.main.gallery
 
 import android.content.Context
 import androidx.recyclerview.widget.GridLayoutManager

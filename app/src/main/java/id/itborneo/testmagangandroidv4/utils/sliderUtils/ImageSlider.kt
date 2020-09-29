@@ -1,4 +1,4 @@
-package id.itborneo.testmagangandroidv4.utils.SliderUtils
+package id.itborneo.testmagangandroidv4.utils.sliderUtils
 
 import android.content.Context
 import android.widget.ImageView
@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat
 import androidx.viewpager.widget.ViewPager
 import id.itborneo.testmagangandroidv4.R
 
-class PlaceDetailSlider(
+class ImageSlider(
     private val context: Context,
     private val viewPager: ViewPager,
     private val sliderDots: LinearLayout,

@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.galleryDetail.GalleryDetailFragment">
+    tools:context=".ui.main.galleryDetail.GalleryDetailFragment"
+    tools:ignore="UseCompoundDrawables">
 
     <ImageView
         android:id="@+id/ivDetailPlace"
@@ -15,7 +16,8 @@
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
         tools:text="Judul disini" />
 
 </LinearLayout>

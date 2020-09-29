@@ -1,4 +1,4 @@
-package id.itborneo.testmagangandroidv4.ui.galleryDetail
+package id.itborneo.testmagangandroidv4.ui.main.galleryDetail
 
 import android.os.Bundle
 import android.util.Log
@@ -6,8 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
+import com.squareup.picasso.Picasso
 import id.itborneo.testmagangandroidv4.R
 import id.itborneo.testmagangandroidv4.data.response.GalleryDataItem
 import id.itborneo.testmagangandroidv4.utils.EXTRA_GALLERY
@@ -59,9 +58,11 @@ class GalleryDetailFragment : Fragment() {
         Log.d(TAG, "updateUI $galleryItem")
         galleryItem.apply {
             tvTitle.text = this.caption
-            Glide.with(requireContext())
+
+            Picasso.get()
                 .load(galleryItem.image)
-                .apply(RequestOptions().placeholder(R.drawable.loading_image))
+                .placeholder(R.drawable.loading_image)
+                .fit()
                 .into(ivDetailPlace)
         }
 

@@ -1,4 +1,4 @@
-package id.itborneo.testmagangandroidv4.ui.places
+package id.itborneo.testmagangandroidv4.ui.main.places
 
 import android.os.Bundle
 import android.util.Log
@@ -14,7 +14,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import id.itborneo.testmagangandroidv4.R
 import id.itborneo.testmagangandroidv4.data.response.PlaceContentItem
-import id.itborneo.testmagangandroidv4.ui.MainViewModel
+import id.itborneo.testmagangandroidv4.ui.main.MainViewModel
 import id.itborneo.testmagangandroidv4.utils.EXTRA_PLACE
 import id.itborneo.testmagangandroidv4.utils.main.MainViewUtils
 import kotlinx.android.synthetic.main.fragment_places.*

@@ -1,17 +1,16 @@
-package id.itborneo.testmagangandroidv4.ui.profile
+package id.itborneo.testmagangandroidv4.ui.main.profile
 
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import id.itborneo.testmagangandroidv4.R
 import id.itborneo.testmagangandroidv4.data.response.UserData
-import id.itborneo.testmagangandroidv4.ui.MainViewModel
+import id.itborneo.testmagangandroidv4.ui.main.MainViewModel
 import id.itborneo.testmagangandroidv4.utils.main.MainViewUtils
 import kotlinx.android.synthetic.main.fragment_profile.*
 

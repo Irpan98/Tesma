@@ -1,4 +1,4 @@
-package id.itborneo.testmagangandroidv4.ui.placesDetail
+package id.itborneo.testmagangandroidv4.ui.main.placesDetail
 
 import android.os.Bundle
 import android.util.Log
@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import id.itborneo.testmagangandroidv4.R
 import id.itborneo.testmagangandroidv4.data.response.PlaceContentItem
 import id.itborneo.testmagangandroidv4.utils.EXTRA_PLACE
-import id.itborneo.testmagangandroidv4.utils.SliderUtils.PlaceDetailSlider
+import id.itborneo.testmagangandroidv4.utils.sliderUtils.ImageSlider
 import id.itborneo.testmagangandroidv4.utils.main.MainViewUtils
 import kotlinx.android.synthetic.main.fragment_detail_place.*
 
@@ -25,7 +25,6 @@ class DetailPlaceFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_detail_place, container, false)
     }
 
@@ -69,7 +68,7 @@ class DetailPlaceFragment : Fragment() {
 
             val images = placeItem.media
             val slider = images?.let {
-                PlaceDetailSlider(
+                ImageSlider(
                     requireContext(), viewPager, SliderDots,
                     it
                 )

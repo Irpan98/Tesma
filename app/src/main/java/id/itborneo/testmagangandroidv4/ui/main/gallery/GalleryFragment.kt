@@ -1,4 +1,4 @@
-package id.itborneo.testmagangandroidv4.ui.gallery
+package id.itborneo.testmagangandroidv4.ui.main.gallery
 
 import android.content.res.Resources
 import android.os.Bundle
@@ -14,7 +14,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import id.itborneo.testmagangandroidv4.R
 import id.itborneo.testmagangandroidv4.data.response.GalleryDataItem
-import id.itborneo.testmagangandroidv4.ui.MainViewModel
+import id.itborneo.testmagangandroidv4.ui.main.MainViewModel
 import id.itborneo.testmagangandroidv4.utils.EXTRA_GALLERY
 import id.itborneo.testmagangandroidv4.utils.main.MainViewUtils
 import kotlinx.android.synthetic.main.fragment_gallery.*

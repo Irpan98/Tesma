@@ -1,4 +1,4 @@
-package id.itborneo.testmagangandroidv4.ui
+package id.itborneo.testmagangandroidv4.ui.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel

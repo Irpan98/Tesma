@@ -1,4 +1,4 @@
-package id.itborneo.testmagangandroidv4.utils.SliderUtils
+package id.itborneo.testmagangandroidv4.utils.sliderUtils
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -11,6 +11,8 @@ import com.bumptech.glide.Glide
 import id.itborneo.testmagangandroidv4.R
 
 
+
+//allow to slide image
 class ViewPagerAdapter(private val context: Context, private val images: List<String>) :
     PagerAdapter() {
     private var layoutInflater: LayoutInflater? = null

@@ -1,11 +1,13 @@
-package id.itborneo.testmagangandroidv4.ui
+package id.itborneo.testmagangandroidv4.ui.loading
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import id.itborneo.testmagangandroidv4.R
+import id.itborneo.testmagangandroidv4.ui.main.MainActivity
 
+@Suppress("DEPRECATION")
 class LoadingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

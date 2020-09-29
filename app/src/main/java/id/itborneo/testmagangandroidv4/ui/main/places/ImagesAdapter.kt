@@ -1,4 +1,4 @@
-package id.itborneo.testmagangandroidv4.ui.places
+package id.itborneo.testmagangandroidv4.ui.main.places
 
 import android.util.Log
 import android.view.LayoutInflater
