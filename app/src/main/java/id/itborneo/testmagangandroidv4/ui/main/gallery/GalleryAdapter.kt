@@ -23,6 +23,19 @@ class GalleryAdapter(
     }
 
 
+
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_gallery, parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(galleryData[position])
+    }
+
+    override fun getItemCount(): Int = galleryData.size
+
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(dataItem: GalleryDataItem) {
             Log.d(TAG, " ViewHolder " + dataItem.thumbnail)
@@ -45,17 +58,5 @@ class GalleryAdapter(
         }
 
     }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_gallery, parent, false)
-        return ViewHolder(view)
-    }
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(galleryData[position])
-    }
-
-    override fun getItemCount(): Int = galleryData.size
-
 
 }
