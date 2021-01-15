@@ -1,57 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="bottom"
-    android:orientation="vertical"
-    tools:context=".ui.main.profile.ProfileFragment">
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="profile"
+            type="id.itborneo.testmagangandroidv4.menu.profile.viewmodels.ProfileViewModel" />
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_gravity="bottom"
-        android:layout_weight="1"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/ivProfil"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center_horizontal"
-            tools:src="@drawable/ic_profile" />
 
-        <TextView
-            android:id="@+id/tvName"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            tools:Text="Full Name Here" />
+            android:layout_height="200dp" />
 
-        <TextView
-            android:id="@+id/tvFullName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:textStyle="bold"
-            tools:Text="Full Name Here" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/avatar_size"
+                android:layout_height="@dimen/avatar_size"
+                app:setAvatar="@{profile.avatar}"
+                tools:src="@tools:sample/avatars" />
 
-        <TextView
-            android:id="@+id/tvPhoneNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@{profile.userName}"
+                tools:Text="Full Name Here" />
+
+            <TextView
+                android:id="@+id/tvFullName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@{profile.fullName}"
+                android:textStyle="bold"
+                tools:Text="Full Name Here" />
+
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@{profile.email}" />
+
+            <TextView
+                android:id="@+id/tvPhoneNumber"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@{profile.phone}" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</layout>
 
