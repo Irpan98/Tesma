@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--dimens list-->
 <resources>
     <dimen name="list_place_padding">@dimen/_8sdp</dimen>
     <dimen name="item_image_height">@dimen/_150sdp</dimen>
+
 </resources>

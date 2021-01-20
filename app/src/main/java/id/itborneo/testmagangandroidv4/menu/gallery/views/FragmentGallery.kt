@@ -48,15 +48,10 @@ class FragmentGallery : Fragment() {
         viewModel.getGallery()
         observeData()
 
-//        initAppbar()
-
 
     }
 
-//    private fun initAppbar() {
-//        MainViewUtils.initAppbar(requireActivity(), "Gallery")
-//
-//    }
+
 
 
     private fun observeData() {

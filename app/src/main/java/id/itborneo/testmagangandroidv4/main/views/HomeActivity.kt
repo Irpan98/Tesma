@@ -18,11 +18,15 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_home)
-        binding.lifecycleOwner = this
+
+        setupBinding()
         initToolbar()
         initBottomNav()
+    }
 
+    private fun setupBinding() {
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_home)
+        binding.lifecycleOwner = this
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -31,10 +35,6 @@ class HomeActivity : AppCompatActivity() {
 
     private fun initToolbar() {
         setSupportActionBar(binding.tbApp)
-
-        tbApp.setNavigationOnClickListener {
-            onBackPressed()
-        }
     }
 
     private fun initBottomNav() {
@@ -44,8 +44,6 @@ class HomeActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController)
         NavigationUI.setupWithNavController(bottomNavigationView, navController)
-
     }
-
 
 }

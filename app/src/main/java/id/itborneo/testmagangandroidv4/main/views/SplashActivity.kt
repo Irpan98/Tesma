@@ -19,15 +19,16 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_splash)
-        binding.lifecycleOwner = this
-
-        initTimerToNavigation()
+        setupBinding()
+        setupTimerToHome()
     }
 
-    private fun initTimerToNavigation() {
+    private fun setupBinding() {
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_splash)
+        binding.lifecycleOwner = this
+    }
 
+    private fun setupTimerToHome() {
         lifecycleScope.launch {
             delay(3000)
             actionToHome()
@@ -37,5 +38,7 @@ class SplashActivity : AppCompatActivity() {
     private fun actionToHome() {
         val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
+        finish()
+
     }
 }
