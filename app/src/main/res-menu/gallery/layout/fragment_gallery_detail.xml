@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".menu.gallery.views.FragmentGalleryDetail">
+
+    <data>
+
+        <variable
+            name="gallery"
+            type="id.itborneo.testmagangandroidv4.menu.gallery.viewmodels.GalleryDetailViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="UseCompoundDrawables">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivDetailPlace"
+            setImageUrl="@{gallery.imageUrl}"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/detail_image_height"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/loading_image" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:text="@{gallery.caption}"
+            android:textSize="@dimen/text_normal"
+            tools:text="Judul disini" />
+
+    </LinearLayout>
+</layout>

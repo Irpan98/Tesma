@@ -1,32 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".splash.SplashActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <LinearLayout
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        tools:context=".main.views.SplashActivity">
 
-        <TextView
-            android:id="@+id/tvTitle"
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center_horizontal"
-            android:text="@string/intership_test"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvSubTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="@string/irpan" />
-    </LinearLayout>
-</RelativeLayout>
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:text="@string/intership_test"
+                android:textSize="@dimen/text_bold"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvSubTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/irpan"
+                android:textSize="@dimen/text_normal" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

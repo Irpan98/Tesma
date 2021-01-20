@@ -6,6 +6,7 @@ import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.viewpager.widget.ViewPager
 import id.itborneo.testmagangandroidv4.R
+import id.itborneo.testmagangandroidv4.menu.list.adapter.ViewPager2Adapter
 
 class ImageSlider(
     private val context: Context,
@@ -18,7 +19,7 @@ class ImageSlider(
         val viewPager = viewPager as ViewPager?
 
         val sliderDotspanel = sliderDots as LinearLayout?
-        val viewPagerAdapter = ViewPagerAdapter(context, images)
+        val viewPagerAdapter = ViewPager2Adapter(context, images)
         viewPager?.adapter = viewPagerAdapter
         val dotscount = viewPagerAdapter.count
         val dots = arrayOfNulls<ImageView?>(dotscount)

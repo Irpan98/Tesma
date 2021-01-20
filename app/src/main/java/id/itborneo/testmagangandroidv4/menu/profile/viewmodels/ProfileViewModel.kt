@@ -1,16 +1,14 @@
 package id.itborneo.testmagangandroidv4.menu.profile.viewmodels
 
 import androidx.databinding.ObservableField
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import id.itborneo.testmagangandroidv4.networks.RemoteDataSource
+import androidx.lifecycle.viewModelScope
 import id.itborneo.testmagangandroidv4.networks.repository.ProfileRepository
-import id.itborneo.testmagangandroidv4.networks.response.UserResponse
 
 class ProfileViewModel : ViewModel() {
 
-    private val repo = ProfileRepository.getInstance(RemoteDataSource.getInstance())
-//    private lateinit var user: LiveData<UserResponse>
+    private val profileRepository = ProfileRepository(viewModelScope)
+
 
     var isLoading: ObservableField<Boolean> = ObservableField()
 
@@ -22,16 +20,21 @@ class ProfileViewModel : ViewModel() {
 
     fun getProfile() {
         isLoading.set(true)
-        repo.getUser {
-            it.userData.let { user ->
-                userName.set(user?.username)
-                fullName.set(user?.fullname)
-                email.set(user?.email)
-                phone.set(user?.phone)
-                avatar.set(user?.avatar)
+        profileRepository.getProfile({
+            isLoading.set(false)
+
+            it?.let { user ->
+                userName.set(user.username)
+                fullName.set(user.fullname)
+                email.set(user.email)
+                phone.set(user.phone)
+                avatar.set(user.avatar)
 
             }
-        }
+        }, {
+            isLoading.set(false)
+
+        })
     }
 
 

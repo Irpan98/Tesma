@@ -1,37 +1,30 @@
 package id.itborneo.testmagangandroidv4.menu.gallery.viewmodels
 
-import androidx.lifecycle.LiveData
+import androidx.databinding.ObservableBoolean
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import id.itborneo.testmagangandroidv4.networks.RemoteDataSource
+import androidx.lifecycle.viewModelScope
+import id.itborneo.testmagangandroidv4.menu.gallery.models.responses.GalleryModel
 import id.itborneo.testmagangandroidv4.networks.repository.GalleryRepository
-import id.itborneo.testmagangandroidv4.networks.response.GalleryResponse
+import id.itborneo.testmagangandroidv4.utils.logDebug
 
 class GalleryViewModel : ViewModel() {
 
-    private val repo = GalleryRepository.getInstance(RemoteDataSource.getInstance())
+    private val repo = GalleryRepository(viewModelScope)
 
+    var isLoading: ObservableBoolean = ObservableBoolean()
+    var listGallery: MutableLiveData<MutableList<GalleryModel>> = MutableLiveData()
 
-    //    private lateinit var placeResponse: LiveData<PlaceResponse>
-    private lateinit var galleryResponse: LiveData<GalleryResponse>
-//    private lateinit var user: LiveData<UserResponse>
+    fun getGallery() {
+        repo.getGallery({
+            logDebug("gallery item count : ${it?.size}")
+            isLoading.set(false)
+            listGallery.postValue(it)
+        }, {
+            isLoading.set(false)
 
-
-//    fun getPlaces(): LiveData<PlaceResponse> {
-//        if (::placeResponse.isInitialized) return placeResponse
-//        placeResponse = repo.getPlaces()
-//        return placeResponse
-//    }
-
-    fun getGallery(): LiveData<GalleryResponse> {
-        galleryResponse = repo.getGallery()
-        return galleryResponse
+        })
     }
-
-//    fun getUser(): LiveData<UserResponse> {
-//        if (::user.isInitialized) return user
-//        user = repo.getUser()
-//        return user
-//    }
 
 
 }

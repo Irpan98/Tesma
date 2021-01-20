@@ -1,25 +1,36 @@
 package id.itborneo.testmagangandroidv4.networks.repository
 
-import id.itborneo.testmagangandroidv4.networks.RemoteDataSource
+import id.itborneo.testmagangandroidv4.menu.list.models.response.PlaceResponseModel
+import id.itborneo.testmagangandroidv4.networks.SafeApiRequest
+import id.itborneo.testmagangandroidv4.networks.ServiceFactory
+import id.itborneo.testmagangandroidv4.networks.rest.RestApiPlace
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
-class PlaceRepository private constructor(
-    private val remoteDataSource: RemoteDataSource
-) {
-    companion object {
+class PlaceRepository(
+    private val scope: CoroutineScope
 
-        @Volatile
-        private var instance: PlaceRepository? = null
+) : SafeApiRequest() {
 
-        fun getInstance(remoteData: RemoteDataSource): PlaceRepository =
-            instance ?: PlaceRepository(remoteData)
+    private val restApi = ServiceFactory.getApiService(RestApiPlace::class.java)
+
+
+    fun getPlace(onSuccess: (PlaceResponseModel?) -> Unit, onError: (Throwable) -> Unit) {
+        scope.launch {
+            try {
+                val result = apiRequest {
+                    restApi.place()
+                }
+                onSuccess(result?.data)
+
+            } catch (throwable: Throwable) {
+                if (throwable !is CancellationException) {
+                    onError(throwable)
+                }
+            }
+        }
     }
-
-
-    fun getPlaces() = remoteDataSource.getPlaces()
-
-//    fun getGallery() = remoteDataSource.getGallery()
-
-//    fun getUser() = remoteDataSource.getUser()
 
 
 }

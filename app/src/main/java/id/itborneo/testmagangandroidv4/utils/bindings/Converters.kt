@@ -3,8 +3,8 @@ package id.itborneo.testmagangandroidv4.utils.bindings
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.GenericTransitionOptions
-import com.dot.internshiptest.utils.glide.GlideApp
 import de.hdodenhof.circleimageview.CircleImageView
+import id.itborneo.testmagangandroidv4.utils.glide.GlideApp
 
 @BindingAdapter("setAvatar")
 fun CircleImageView.setAvatar(imageUrl: String?) {

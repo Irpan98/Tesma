@@ -7,4 +7,6 @@
     <string name="profile">Profile</string>
     <string name="irpan">Irpan</string>
     <string name="intership_test">Intership Test</string>
+    <string name="detail_gallery">Detail Gallery</string>
+    <string name="detail_place">Detail Place</string>
 </resources>

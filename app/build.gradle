@@ -2,6 +2,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs'
+
 
 android {
     compileSdkVersion 30
@@ -36,7 +38,21 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    sourceSets {
+        main {
+            res.srcDirs = [
+                    'src/main/res',
+                    'src/main/res-menu',
+                    'src/main/res-menu/gallery',
+                    'src/main/res-menu/list',
+                    'src/main/res-menu/profile',
+
+            ]
+        }
+    }
 }
+
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
@@ -69,10 +85,17 @@ dependencies {
     implementation "de.hdodenhof:circleimageview:$circleImageViewVersion"
 
     implementation "com.intuit.sdp:sdp-android:$sdpVersion"
+    implementation "com.intuit.ssp:ssp-android:$sspVersion"
 
     implementation "androidx.coordinatorlayout:coordinatorlayout:$coordinatorLayoutVersion"
 
     implementation "io.sentry:sentry-android:$sentryVersion"
+    implementation "com.tbuonomo.andrui:viewpagerdotsindicator:$viewPagerDotsIndicator"
+
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
+
 
 
 }
